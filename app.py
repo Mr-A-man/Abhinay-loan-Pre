@@ -10,9 +10,9 @@ imputer = bundle['imputer']
 feature_cols = bundle['feature_cols']
 threshold = bundle.get('threshold', 0.30)
 
-st.set_page_config(page_title="Loan Predictor")
-st.title("Loan Prediction")
-st.caption("Powered by Aman kumar (CSDS-20)")
+st.set_page_config(page_title="Prediction-Loan")
+st.title("Prediction-Loan")
+st.caption("Abhinay Singh (CSDS-06)")
 
 col1, col2 = st.columns(2)
 with col1:
@@ -55,7 +55,3 @@ if st.button("Predict Loan Risk", use_container_width=True):
     else:
         st.success(f"Low Risk")
         st.metric("Approval", f"{(1 - prob_default):.1%}")
-
-    # Risk bar
-    st.progress(float(prob_default), text=f"Risk Score: {prob_default:.1%}")
-
